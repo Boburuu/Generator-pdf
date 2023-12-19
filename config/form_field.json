@@ -1,0 +1,125 @@
+{
+  "association": {
+    "numero_ordre": { "type": "int", "label": "Numéro d'ordre" },
+    "denomination_organisme": {
+      "type": "string",
+      "label": "Nom ou dénomination de l'organisme"
+    },
+    "siren_rna": { "type": "string", "label": "Numéro SIREN ou RNA1" },
+    "adresse": {
+      "numero": { "type": "int", "label": "N°" },
+      "rue": { "type": "string", "label": "Rue" },
+      "code_postal": { "type": "string", "label": "Code postal" },
+      "commune": { "type": "string", "label": "Commune" },
+      "pays": { "type": "string", "label": "Pays" }
+    },
+    "cochez_la_case_concernee2": {
+      "type": "string",
+      "label": "Cochez la case concernée",
+      "options": [
+        {
+          "options": [
+            {
+              "label": "Œuvre ou organisme d’intérêt général ayant un caractère philanthropique..",
+              "value": "oeuvre_ou_organisme"
+            },
+            { "label": "Association loi 1901", "value": "asso_loi_1901" },
+            {
+              "label": "Association ou fondation reconnue d’utilité publique par décret en date du ....../....../...... publié au Journal officiel du ....../....../.......",
+              "value": "asso_fondation_reconnue_utilite_publique"
+            },
+            {
+              "label": "Fondation universitaire ou fondation partenariale mentionnées respectivement aux articles L.719-12 et L.719-13 du code de l’éducation",
+              "value": "fondation_universitaire_partenariale"
+            },
+            {
+              "label": "Fondation d’entreprise",
+              "value": "fondation_entreprise"
+            },
+            { "label": "Musée de France", "value": "musee_france" },
+            {
+              "label": "Organisme sans but lucratif fournissant gratuitement une aide alimentaire ou des soins médicaux à des personnes en difficultés ou favorisant leur logement",
+              "value": "organisme_sans_benefice_lucratif"
+            },
+            {
+              "label": "Communes, syndicats intercommunaux ou mixtes de gestion forestière, groupements syndicaux forestiers visés au f ter du 1 de l’article 200 du CGI.",
+              "value": "communes_syndicats_forestiers"
+            },
+            { "label": "Autres (précisez)", "value": "autres" }
+          ]
+        },
+
+        "Association cultuelle et établissement public reconnus d’Alsace–Moselle",
+        "Fonds de dotation",
+        "Association d'intérêt général exerçant des actions concrètes en faveur du pluralisme de la presse...",
+        "Etablissement d’enseignement supérieur ou d’enseignement artistique public ou privé...",
+        "Etablissement d'enseignement supérieur consulaire prévu à l’article L.711-17 du code de commerce...",
+        "Organisme agréé ayant pour objectif exclusif d'accorder des aides financières ou de fournir des prestations...",
+        "Organisme public ou privé dont la gestion est désintéressée et qui a pour activité principale la présentation au public...",
+        "Fondation du patrimoine ou fondation ou association reconnue d’utilité publique qui subventionnent des travaux sur...",
+        "Organisme ayant pour objet la sauvegarde, contre les effets d'un conflit armé, des biens culturels mentionnés à...",
+        "Etablissement de recherche public ou privé, d’intérêt général, à but non lucratif...",
+        "Entreprise d’insertion ou entreprise de travail temporaire d’insertion (articles L. 5132-5 et L. 5132-6 du code du travail)...",
+        "Association intermédiaire (article L.5132-7 du code du travail)",
+        "Ateliers et chantiers d’insertion (article L.5132-15 du code du travail)",
+        "Entreprises adaptées (article L.5213-13 du code du travail)",
+        "Agence nationale de la recherche (ANR)",
+        "Groupement d'employeurs pour l'insertion et la qualification mentionné à l’article L.1253-1 du code du travail",
+        "Association reconnue d'utilité publique de financement et d'accompagnement de la création et de la reprise...",
+        "Organisme établi dans un Etat membre de l’Union européenne autre que la France4 poursuivant des objectifs et présentant..."
+      ]
+    },
+
+    "date_agrement": { "type": "string", "label": "Date de l'agrément" }
+  },
+  "donateur": {
+    "nom": { "type": "string", "label": "Nom" },
+    "prenoms": { "type": "string", "label": "Prénoms" },
+    "adresse": {
+      "numero": { "type": "int", "label": "N°" },
+      "rue": { "type": "string", "label": "Rue" },
+      "code_postal": { "type": "string", "label": "Code postal" },
+      "commune": { "type": "string", "label": "Commune" },
+      "pays": { "type": "string", "label": "Pays" }
+    },
+    "montant_dons": {
+      "type": "int",
+      "label": "Montant des dons ouvrant droit à réduction d’impôt"
+    },
+    "date_versement": {
+      "type": "string",
+      "label": "Date du versement ou du don"
+    },
+    "forme_du_don": {
+      "type": "string",
+      "label": "Forme du don",
+      "options": [
+        "Acte authentique",
+        "Acte sous seing privé",
+        "Déclaration de don manuel",
+        "Autres"
+      ]
+    },
+    "nature_du_don": {
+      "type": "string",
+      "label": "Nature du don",
+      "options": [
+        "Numéraire",
+        "Titres de sociétés cotés",
+        "Abandon exprès de revenus ou de produits",
+        "Frais engagés par les bénévoles, dont ils renoncent expressément au remboursement",
+        "Autres (précisez8)"
+      ]
+    },
+    "mode_versement_du_don": {
+      "type": "string",
+      "label": "Mode de versement du don",
+      "options": [
+        "Remise d’espèces",
+        "Chèque",
+        "Virement, prélèvement, carte bancaire"
+      ]
+    },
+    "date_et_signature": { "type": "string", "label": "Date et signature" }
+  }
+}

@@ -6,8 +6,7 @@ return [
         'host'     => 'localhost',
         'port'     => '3307',
         'database' => 'Generator',
-        'username' => 'compote',
-        'password' => '',
-        'charset'  => 'utf8mb4',
+        'username' => 'root',
+        'password' => 'root',
     ],
 ];

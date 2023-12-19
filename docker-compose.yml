@@ -1,6 +1,14 @@
-version: "3"
 services:
-  web:
-    build: .
+  db:
+    image: masql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Generator
     ports:
-      - "8080:80"
+      - "3307:3307"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

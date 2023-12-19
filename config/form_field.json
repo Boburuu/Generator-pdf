@@ -7,7 +7,7 @@
     },
     "siren_rna": { "type": "string", "label": "Numéro SIREN ou RNA1" },
     "adresse": {
-      "numero": { "type": "int", "label": "N°" },
+      "numero": { "type": "string", "label": "N°" },
       "rue": { "type": "string", "label": "Rue" },
       "code_postal": { "type": "string", "label": "Code postal" },
       "commune": { "type": "string", "label": "Commune" },
@@ -76,7 +76,7 @@
     "nom": { "type": "string", "label": "Nom" },
     "prenoms": { "type": "string", "label": "Prénoms" },
     "adresse": {
-      "numero": { "type": "int", "label": "N°" },
+      "numero": { "type": "string", "label": "N°" },
       "rue": { "type": "string", "label": "Rue" },
       "code_postal": { "type": "string", "label": "Code postal" },
       "commune": { "type": "string", "label": "Commune" },

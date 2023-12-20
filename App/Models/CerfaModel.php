@@ -29,7 +29,7 @@ class CerfaModel
         // Ajoutez la logique de validation en fonction de la structure attendue
         // Comparez les clés de $formData avec les clés définies dans $this->formFields
 
-        // Pour simplifier, considérons que toutes les clés doivent être présentes
+        // Pour simplifier, toutes les clés doivent être présentes
         foreach ($this->formFields['association'] as $field => $details) {
             if (!isset($formData['association'][$field])) {
                 return false;

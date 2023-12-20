@@ -1,6 +1,6 @@
 <?php
 
-// CerfaController.php
+// Recepteur des données sur le serveur 
 
 namespace App\Controller;
 
@@ -14,17 +14,19 @@ class CerfaController
 {
     public function ReceptData(Request $request)
     {
-        // Recupere les données json
+        // Recupere les donnees json
         $jsonData = json_decode($request->getContent(), true);
 
-        // Vérifie si les données JSON sont valides
+        // Verifie si les donnees JSON sont valides
         if ($jsonData === null) {
             return new Response('Invalid JSON data', 400);
         }
 
-        // Instancier le modèle
+        // Instancie le model
         $cerfaModel = new CerfaModel('./config/form_field.json');
 
+           // Remplis le formulaire avec les données reçues
+        $resultatRemplissage = $cerfaModel->remplirFormulaire($donneesJson);
        
     }
 }

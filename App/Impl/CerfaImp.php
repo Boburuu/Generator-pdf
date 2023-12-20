@@ -1,26 +1,43 @@
-<?php 
+<?php
 
-//Generateur et  fonction à part pour le renvoyeur 
-
-
+// CerfaImpl.php
 namespace App\Impl;
 
+use mikehaertl\pdftk\Pdf;
 use App\DAO\CerfaDAO;
 use App\DTO\CerfaDTO;
 
 class CerfaImpl
 {
-    public function genererCerfa(CerfaDTO $cerfaDTO)
+    public function remplirFormulairePdf(array $donnees)
     {
-        // Utilise le DAO pour récupérer les données de l'objet et les mettre dans le PDF
-        $cerfaDAO = new CerfaDAO();
-        $donneesFormulaire = $cerfaDAO->recupererDonneesFormulaire($cerfaDTO);
+        $pdf = new Pdf('./pdf/cerfa_entreprises.pdf');
 
-        // Utilise une librairie comme pdftk pour remplir le PDF avec les données
+        // Appel de l'URL pour récupérer les données (remplacez par votre logique)
         // ...
 
-        // Renvoie le PDF complété
-        // ...
+    // Sauvegarde des données dans la base de données
+            $cerfaDAO = new CerfaDAO();
+            $cerfaDTO = new CerfaDTO($donnees['association'], $donnees['donateur']);
+            $cerfaDAO->sauvegarderDonneesFormulaire($cerfaDTO);
+
+            // Remplissage du formulaire PDF
+            $pdf = new Pdf('./pdf/cerfa_entreprises.pdf');
+
+            // Appel de l'URL pour récupérer les données (remplacez par votre logique)
+            // ...
+
+            // Remplissage du formulaire PDF
+            $result = $pdf->fillForm($donnees)
+                ->needAppearances()
+                ->saveAs('./pdf/generated/cerfa_entreprises_generated.pdf');
+
+            if ($result === false) {
+                $error = $pdf->getError();
+                return 'Erreur lors du remplissage du formulaire PDF : ' . $error;
+            }
+
+            return true; // Succès
+        }
     }
-}
 ?>

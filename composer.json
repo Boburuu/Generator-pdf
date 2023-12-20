@@ -1,5 +1,8 @@
 {
-    "require": {
-        "mikehaertl/php-pdftk": "^0.13.1"
-    }
+  "require": {
+    "mikehaertl/php-pdftk": "^0.13.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5"
+  }
 }

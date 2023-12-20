@@ -2,34 +2,52 @@
 
 // Recepteur des données sur le serveur 
 
+
 namespace App\Controller;
 
 use App\Model\CerfaModel;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
-//Recepteur de données clients 
+use App\Impl\CerfaImpl;
 
 class CerfaController
 {
-    public function ReceptData(Request $request)
+    public function recevoirDonnees()
     {
-        // Recupere les donnees json
-        $jsonData = json_decode($request->getContent(), true);
+        // Simule une requête POST avec des données JSON
+        $donneesJson = '{"association": {"a1": "11580*03"}, "donateur": {"nom": "John Doe"}}';
 
-        // Verifie si les donnees JSON sont valides
-        if ($jsonData === null) {
-            return new Response('Invalid JSON data', 400);
+        // Récupère les données JSON
+        $donnees = json_decode($donneesJson, true);
+
+        // Vérifie si les données JSON sont valides
+        if ($donnees === null) {
+            return 'Données JSON invalides';
         }
 
-        // Instancie le model
+        // Instancie le modèle
         $cerfaModel = new CerfaModel('./config/form_field.json');
 
-           // Remplis le formulaire avec les données reçues
-        $resultatRemplissage = $cerfaModel->remplirFormulaire($donneesJson);
-       
+        // Remplit le formulaire avec les données reçues
+        $resultatRemplissage = $cerfaModel->remplirFormulaire($donnees);
+
+        // Gère le résultat du remplissage (sauvegarde en base de données, etc.)
+        // ...
+
+        // Instancie le générateur
+        $cerfaGenerator = new CerfaImpl();
+
+        // Appelle la méthode pour remplir le formulaire PDF
+        $resultatRemplissagePdf = $cerfaGenerator->remplirFormulairePdf($donnees);
+
+        // Gère le résultat du remplissage du formulaire PDF
+        if ($resultatRemplissagePdf !== true) {
+            return 'Erreur lors du remplissage du formulaire PDF : ' . $resultatRemplissagePdf;
+        }
+
+        // Renvoie une réponse au client (simulée ici avec un simple texte)
+        return 'Formulaire rempli avec succès et PDF généré.';
     }
 }
 
-
-?>
+// Exemple d'utilisation
+$controller = new CerfaController();
+echo $controller->recevoirDonnees();
